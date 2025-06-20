@@ -62,7 +62,7 @@ def predict_page():
         format_data=[age,bmi,children,sex_female,sex_male,
                      smoke_no,smoke_yes,
                      region_northeast,region_southeast,region_northwest,region_southwest]
-    with open(r'https:/github.com/abcdezp/qingzhou/blob/main/rfr_model.pkl','rb') as f:
+    with open('rfr_model.pkl','rb') as f:
         rfr_model=pickle.load(f)
     if submitted:
         format_data_df=pd.DataFrame(data=[format_data],columns=rfr_model.feature_names_in_)
